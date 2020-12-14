@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>QUACKIE</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+    rel="stylesheet" type="text/css">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+
+  <!-- Tabulator -->
+  <link href="https://unpkg.com/tabulator-tables@4.8.4/dist/css/tabulator_simple.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.8.4/dist/js/tabulator.min.js"></script>
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <a class="menu-toggle rounded" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="#page-top">QUACKIE</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#page-top">Home</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#results">Results</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#faq">FAQ</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead d-flex">
+    <div class="container text-center my-auto">
+      <h1 class="mb-1">QUACKIE</h1>
+      <h3 class="mb-5">
+        <em>A NLP Classification Task With Ground Truth Explanations</em>
+      </h3>
+      <p class="lead mb-5">Evaluating NLP interpretability is hard, since the actual reasoning is unknown. The
+        <b>QU</b>estion
+        and <b>A</b>nswering for <b>C</b>lassification tas<b>K</b> <b>I</b>nterpretability <b>E</b>valuation benchmark
+        utilizes a novel approach by
+        formulating a classification task for which Interpretability ground truth labels arise directly from the
+        classification problem definition. It is based on Question Answering datasets with the classification task being
+        question answerability. The ground truth interpretability for knowing that the question is answerable with the
+        context is the sentence containing the answer.</p>
+      <a class="btn btn-primary btn-xl js-scroll-trigger" href="#results">View The Results</a>
+      <a class="btn btn-primary btn-xl js-scroll-trigger" href="http://google.com">Read The Paper</a>
+    </div>
+    <div class="overlay"></div>
+  </header>
+
+  <!-- Results -->
+  <section class="content-section bg-primary" id="results">
+    <div class="container">
+      <div class="content-section-heading">
+        <h2 class="mb-5">Results</h2>
+
+        Dataset
+        <br>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary active">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked
+              onclick="change_dataset(table, 'SQuAD')">
+            SQuAD
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option2" autocomplete="off"
+              onclick="change_dataset(table, 'New Wiki')"> New
+            Wiki
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3" autocomplete="off" onclick="change_dataset(table, 'NYT')">
+            NYT
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3" autocomplete="off"
+              onclick="change_dataset(table, 'Reddit')"> Reddit
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3" autocomplete="off"
+              onclick="change_dataset(table, 'Amazon')"> Amazon
+          </label>
+        </div>
+        <br>
+        <br>
+        Classifier
+        <br>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option2" autocomplete="off" checked
+              onclick="change_classifier(table, 'Classif')">
+            Classification
+          </label>
+          <label class="btn btn-secondary">
+            <input type="radio" name="options" id="option3" autocomplete="off" onclick="change_classifier(table, 'QA')">
+            QuestionAnswering
+          </label>
+        </div>
+        <p class="lead mb-5"></p>
+        <div id="example-table"></div>
+        <script type="text/javascript">
+
+          function change_dataset(table, dataset) {
+            var filters = table.getFilters();
+            if (filters[0].field == "dataset") {
+              filters[0].value = dataset;
+            } else {
+              filters[1].value = dataset;
+            }
+            table.setFilter(filters);
+          }
+          function change_classifier(table, classifier) {
+            var filters = table.getFilters();
+            if (filters[0].field == "classifier") {
+              filters[0].value = classifier;
+            } else {
+              filters[1].value = classifier;
+            }
+            table.setFilter(filters);
+          }
+
+
+          var table = new Tabulator("#example-table", {
+            height: 205, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
+            layout: "fitColumns", //fit columns to width of table (optional)
+            resizableColumns: false,
+            columns: [ //Define Table Columns
+              { title: "Dataset", field: "dataset", visible: false },
+              { title: "Classifier", field: "classifier", visible: false },
+              { title: "Method", field: "method" },
+              { title: "IoU", field: "IoU" },
+              { title: "HPD", field: "HPD" },
+              { title: "SNR", field: "SNR" },
+              { title: "More Info", field: "info", formatter: "link", headerSort: false },
+            ],
+          });
+
+          //define some sample data
+          var res = [
+            { dataset: "SQuAD", classifier: "QA", method: "M1", IoU: 0.5, HPD: 0.8, SNR: 1.0, info: "http://google.com" },
+            { dataset: "SQuAD", classifier: "QA", method: "M2", IoU: 0.4, HPD: 0.8, SNR: 1.0, info: "http://google.com" },
+            { dataset: "SQuAD", classifier: "QA", method: "M3", IoU: 0.3, HPD: 0.8, SNR: 1.0, info: "http://google.com" },
+            { dataset: "New Wiki", classifier: "QA", method: "M1", IoU: 0.2, HPD: 0.8, SNR: 1.0, info: "http://google.com" },
+            { dataset: "New Wiki", classifier: "Classif", method: "M1", IoU: 0, HPD: 0.8, SNR: 1.0, info: "http://google.com" },
+            { dataset: "SQuAD", classifier: "Classif", method: "M1", IoU: 0, HPD: 0.8, SNR: 1.0, info: "http://google.com" }
+          ];
+          var haha = ["ha", "haha", "hahaha", "hahahaha", "hahahahaha"]
+          //load sample data into the table
+          table.setData(res);
+          table.addFilter('dataset', '=', 'SQuAD');
+          table.addFilter('classifier', '=', 'Classif')
+        //table.setData(tabledata);
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="content-section bg-light" id="faq">
+    <div class="container">
+      <div class="content-section-heading">
+        <h2 class="mb-5">FAQ</h2>
+        <p class="lead mb-5">here comes a FAQ if needed</p>
+      </div>
+
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn shadow-none" type="button" data-toggle="collapse" data-target="#collapseOne"
+                aria-expanded="false" aria-controls="collapseOne">
+                How do I use QUACKIE?
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              We provide a simple evaluation script in our Github, called <code>run_experiment.py</code>. For usage,
+              instantiate
+              the interpreter in lines 17 and following. The experiment can be run with the <code>--run</code> flag,
+              result
+              analysis is done with the <code>--analyse</code> flag.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn shadow-none" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+                Are there any rules for using QUACKIE?
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+              Systems may use any public or private data for training. There are however 2 exceptions:
+              <ol>
+                <li>
+                  Systems may not leverage knowledge about the QA task to come up with an explanation. For example,
+                  using
+                  a QA model to answer the question and provide its response as reasoning is not allowed.</li>
+                <li>
+                  Systems may not use the test data for training, that is the validation data of <a
+                    href='https://rajpurkar.github.io/SQuAD-explorer/'>SQuAD 2.0</a> as
+                  well as the test-data of <a
+                    href='https://modestyachts.github.io/squadshifts-website/index.html'>SQuADShifts</a>.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn shadow-none" type="button" data-toggle="collapse" data-target="#collapseThree"
+                aria-expanded="false" aria-controls="collapseThree">
+                How do I submit my results to QUACKIE?
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+              Results can be submitted using a pull request in the <code>results.json</code> file. The pull request
+              should include results for all datasets and classifiers. Further, a link to the method (Github page or
+              Paper) should be included in the <em>More Info</em> column.
+            </div>
+          </div>
+        </div>
+
+
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn shadow-none" type="button" data-toggle="collapse" data-target="#collapseFour"
+                aria-expanded="false" aria-controls="collapseFour">
+                Can I submit results for Algorithms not developed by me?
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+            <div class="card-body">
+              Yes, and we thank you for your contribution. However, the <em>More Info</em> column should still refer to
+              the original publication.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn shadow-none" type="button" data-toggle="collapse" data-target="#collapseFive"
+                aria-expanded="false" aria-controls="collapseFive">
+                What licence is the QUACKIE data distributed under?
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+            <div class="card-body">
+              QUACKIE reuses data from <a href='https://rajpurkar.github.io/SQuAD-explorer/'>SQuAD 2.0</a> and
+              <a href='https://modestyachts.github.io/squadshifts-website/index.html'>SQuADShifts</a>, please refer to
+              their websites.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <ul class="list-inline mb-5">
+        <li class="list-inline-item">
+          <button type="button" class="btn btn-git"
+            onclick="location.href = 'https://github.com/axa-rev-research/quackie';"><i class="icon-social-github"></i>
+            Github</button>
+        </li>
+
+        <li class="list-inline-item">
+          <button type="button" class="btn btn-git" onclick="location.href = 'http://google.com';"><i
+              class="icon-doc"></i>
+            Paper</button>
+        </li>
+
+        <li class="list-inline-item">
+          <button type="button" class="btn btn-git" onclick="location.href = 'https://axa-rev-research.github.io/';"><i
+              class="icon-people"></i>
+            AXA Rev Research</button>
+        </li>
+      </ul>
+      <p class="text-muted small mb-0">This project was carried out by Yves Rychener during his time at AXA Rev
+        Research under the supervision of Xavier Renard.</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/stylish-portfolio.min.js"></script>
+
+</body>
+
+</html>
