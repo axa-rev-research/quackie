@@ -2,7 +2,7 @@
 This repository contains code for the QUACKIE paper. For the benchmark website, please visit [QUCKIE](link).
 
 ## Usage
-The file `run_experiment.py` can be used for running the experiment. To run the experiment with a custom interpreter on a specific dataset, load the interpreter in line 21-30 and run using the command `python run_experiment.py --run --dataset SQuAD`. The following command line arguments can be given
+The file `run_experiment.py` can be used for running the experiment. To run the experiment with a custom interpreter on a specific dataset, load the interpreter in line 21-30 and run using the command `python run_experiment.py --run --dataset DATASET`, where DATASET is one of the supported datasets. The following command line arguments can be given
 - `--run`: Flag to run the experiment
 - `--analyze`: Flag to analyze the results
 - `--dataset` : Dataset to use. Must be provided if `--run` is given.
