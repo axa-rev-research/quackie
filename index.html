@@ -110,7 +110,7 @@
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
           <label class="btn btn-secondary">
             <input type="radio" name="options" id="option2" autocomplete="off" checked
-              onclick="change_classifier(table, 'Classif')">
+              onclick="change_classifier(table, 'Classification')">
             Classification
           </label>
           <label class="btn btn-secondary">
@@ -166,11 +166,10 @@
             { dataset: "New Wiki", classifier: "Classif", method: "M1", IoU: 0, HPD: 0.8, SNR: 1.0, info: "http://google.com" },
             { dataset: "SQuAD", classifier: "Classif", method: "M1", IoU: 0, HPD: 0.8, SNR: 1.0, info: "http://google.com" }
           ];
-          var haha = ["ha", "haha", "hahaha", "hahahaha", "hahahahaha"]
           //load sample data into the table
-          table.setData(res);
+          table.setData("https://axa-rev-research.github.io/quackie/results.json");
           table.addFilter('dataset', '=', 'SQuAD');
-          table.addFilter('classifier', '=', 'Classif')
+          table.addFilter('classifier', '=', 'Classification')
         //table.setData(tabledata);
         </script>
       </div>
