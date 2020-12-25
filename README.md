@@ -1,5 +1,5 @@
 # QUCKIE
-This repository contains code for the QUACKIE paper. For the benchmark website, please visit [QUACKIE](link).
+This repository contains code for the QUACKIE paper. For the benchmark website, please visit [QUACKIE](https://arxiv.org/abs/2012.13190).
 
 ## Usage
 The file `run_experiment.py` can be used for running the experiment. To run the experiment with a custom interpreter on a specific dataset, load the interpreter in line 21-30 and run using the command `python run_experiment.py --run --dataset DATASET`, where DATASET is one of the supported datasets. The following command line arguments can be given
