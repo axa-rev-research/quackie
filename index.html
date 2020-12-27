@@ -195,10 +195,10 @@
             { dataset: "New Wiki", classifier: "Classif", method: "M1", IoU: 0, HPD: 0.8, SNR: 1.0, info: "http://google.com" },
             { dataset: "SQuAD", classifier: "Classif", method: "M1", IoU: 0, HPD: 0.8, SNR: 1.0, info: "http://google.com" }
           ];
-          //load sample data into the table
-          table.setData("https://axa-rev-research.github.io/quackie/results.json");
+          //load data into the table
           table.addFilter('dataset', '=', 'SQuAD');
           table.addFilter('classifier', '=', 'Classification')
+          table.setData("https://axa-rev-research.github.io/quackie/results.json");
           table.setData("https://axa-rev-research.github.io/quackie/results.json");
         //table.setData(tabledata);
         </script>
