@@ -130,6 +130,7 @@
               filters[1].value = dataset;
             }
             table.setFilter(filters);
+            table.setData("https://axa-rev-research.github.io/quackie/results.json");
           }
           function change_classifier(table, classifier) {
             var filters = table.getFilters();
@@ -139,6 +140,7 @@
               filters[1].value = classifier;
             }
             table.setFilter(filters);
+            table.setData("https://axa-rev-research.github.io/quackie/results.json");
           }
 
 
@@ -150,9 +152,36 @@
               { title: "Dataset", field: "dataset", visible: false },
               { title: "Classifier", field: "classifier", visible: false },
               { title: "Method", field: "method" },
-              { title: "IoU", field: "IoU", headerSortStartingDir:"desc", topCalc:"max" },
-              { title: "HPD", field: "HPD", headerSortStartingDir:"desc", topCalc:"max" },
-              { title: "SNR", field: "SNR", headerSortStartingDir:"desc", topCalc:"max" },
+              { title: "IoU", field: "IoU", headerSortStartingDir:"desc", topCalc:"max", formatter: function (cell, formatterParams, onRendered) {
+                  onRendered(function () {
+                    var max = table.getCalcResults();
+                    console.log(cell.getColumn()._column.cells);
+                    cell.getElement().innerHTML = cell.getValue();
+                    if (cell._cell.value == max.top.IoU) {
+                      cell.getElement().innerHTML = '<b>' + cell.getValue() + '</b>';
+                    }
+                  });
+                } },
+              { title: "HPD", field: "HPD", headerSortStartingDir:"desc", topCalc:"max", formatter: function (cell, formatterParams, onRendered) {
+                  onRendered(function () {
+                    var max = table.getCalcResults();
+                    console.log(cell.getColumn()._column.cells);
+                    cell.getElement().innerHTML = cell.getValue();
+                    if (cell._cell.value == max.top.HPD) {
+                      cell.getElement().innerHTML = '<b>' + cell.getValue() + '</b>';
+                    }
+                  });
+                } },
+              { title: "SNR", field: "SNR", headerSortStartingDir:"desc", topCalc:"max", formatter: function (cell, formatterParams, onRendered) {
+                  onRendered(function () {
+                    var max = table.getCalcResults();
+                    console.log(cell.getColumn()._column.cells);
+                    cell.getElement().innerHTML = cell.getValue();
+                    if (cell._cell.value == max.top.SNR) {
+                      cell.getElement().innerHTML = '<b>' + cell.getValue() + '</b>';
+                    }
+                  });
+                } },
               { title: "More Info", field: "info", formatter: "link", headerSort: false },
             ],
           });
@@ -170,6 +199,7 @@
           table.setData("https://axa-rev-research.github.io/quackie/results.json");
           table.addFilter('dataset', '=', 'SQuAD');
           table.addFilter('classifier', '=', 'Classification')
+          table.setData("https://axa-rev-research.github.io/quackie/results.json");
         //table.setData(tabledata);
         </script>
       </div>
