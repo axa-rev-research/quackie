@@ -130,7 +130,6 @@
               filters[1].value = dataset;
             }
             table.setFilter(filters);
-            table.setData("https://axa-rev-research.github.io/quackie/results.json");
           }
           function change_classifier(table, classifier) {
             var filters = table.getFilters();
@@ -140,7 +139,6 @@
               filters[1].value = classifier;
             }
             table.setFilter(filters);
-            table.setData("https://axa-rev-research.github.io/quackie/results.json");
           }
 
 
@@ -152,33 +150,9 @@
               { title: "Dataset", field: "dataset", visible: false },
               { title: "Classifier", field: "classifier", visible: false },
               { title: "Method", field: "method" },
-              { title: "IoU", field: "IoU", headerSortStartingDir:"desc", topCalc:"max", formatter: function (cell, formatterParams, onRendered) {
-                  onRendered(function () {
-                    var max = table.getCalcResults();
-                    cell.getElement().innerHTML = cell.getValue();
-                    if (cell._cell.value == max.top.IoU) {
-                      cell.getElement().innerHTML = '<b>' + cell.getValue() + '</b>';
-                    }
-                  });
-                } },
-              { title: "HPD", field: "HPD", headerSortStartingDir:"desc", topCalc:"max", formatter: function (cell, formatterParams, onRendered) {
-                  onRendered(function () {
-                    var max = table.getCalcResults();
-                    cell.getElement().innerHTML = cell.getValue();
-                    if (cell._cell.value == max.top.HPD) {
-                      cell.getElement().innerHTML = '<b>' + cell.getValue() + '</b>';
-                    }
-                  });
-                } },
-              { title: "SNR", field: "SNR", headerSortStartingDir:"desc", topCalc:"max", formatter: function (cell, formatterParams, onRendered) {
-                  onRendered(function () {
-                    var max = table.getCalcResults();
-                    cell.getElement().innerHTML = cell.getValue();
-                    if (cell._cell.value == max.top.SNR) {
-                      cell.getElement().innerHTML = '<b>' + cell.getValue() + '</b>';
-                    }
-                  });
-                } },
+              { title: "IoU", field: "IoU", headerSortStartingDir:"desc", topCalc:"max" },
+              { title: "HPD", field: "HPD", headerSortStartingDir:"desc", topCalc:"max" },
+              { title: "SNR", field: "SNR", headerSortStartingDir:"desc", topCalc:"max" },
               { title: "More Info", field: "info", formatter: "link", headerSort: false },
             ],
           });
@@ -192,11 +166,10 @@
             { dataset: "New Wiki", classifier: "Classif", method: "M1", IoU: 0, HPD: 0.8, SNR: 1.0, info: "http://google.com" },
             { dataset: "SQuAD", classifier: "Classif", method: "M1", IoU: 0, HPD: 0.8, SNR: 1.0, info: "http://google.com" }
           ];
-          //load data into the table
+          //load sample data into the table
+          table.setData("https://axa-rev-research.github.io/quackie/results.json");
           table.addFilter('dataset', '=', 'SQuAD');
           table.addFilter('classifier', '=', 'Classification')
-          table.setData("https://axa-rev-research.github.io/quackie/results.json");
-          change_classifier(table, 'Classification')
         //table.setData(tabledata);
         </script>
       </div>
