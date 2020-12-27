@@ -150,9 +150,9 @@
               { title: "Dataset", field: "dataset", visible: false },
               { title: "Classifier", field: "classifier", visible: false },
               { title: "Method", field: "method" },
-              { title: "IoU", field: "IoU" },
-              { title: "HPD", field: "HPD" },
-              { title: "SNR", field: "SNR" },
+              { title: "IoU", field: "IoU", headerSortStartingDir:"desc", topCalc:"max" },
+              { title: "HPD", field: "HPD", headerSortStartingDir:"desc", topCalc:"max" },
+              { title: "SNR", field: "SNR", headerSortStartingDir:"desc", topCalc:"max" },
               { title: "More Info", field: "info", formatter: "link", headerSort: false },
             ],
           });
