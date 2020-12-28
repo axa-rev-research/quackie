@@ -181,8 +181,71 @@
     <div class="container">
       <div class="content-section-heading">
         <h2 class="mb-5">FAQ</h2>
-        <p class="lead mb-5">here comes a FAQ if needed</p>
       </div>
+      
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingA">
+            <h5 class="mb-0">
+              <button class="btn shadow-none" type="button" data-toggle="collapse" data-target="#collapseA"
+                aria-expanded="false" aria-controls="collapseA">
+                How are QUACKIE ground truth labels constructed?
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseA" class="collapse" aria-labelledby="headingA" data-parent="#accordionExample">
+            <div class="card-body">
+              The labels for interpretability in QUACKIE are based on question-answering datasets and the simple
+              observation that the most important sentence for knowing the answer to a question is in a text must be the
+              sentence containing the answer. For each question-context pair, we formalize a classification task, asking
+              if the question is answerable with only the context. Interpretability is performed with respect to the
+              context and should find the sentence containing the answer as the most important one.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingBe">
+            <h5 class="mb-0">
+              <button class="btn shadow-none" type="button" data-toggle="collapse" data-target="#collapseB"
+                aria-expanded="false" aria-controls="collapseB">
+                What are the different classifiers?
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseB" class="collapse" aria-labelledby="headingB" data-parent="#accordionExample">
+            <div class="card-body">
+              We provide two classifiers with QUACKIE in order to give a level playing field. A classification model,
+              based on a large RoBERTa model and directly trained on question answerability. The second model is a
+              AlBERT-based question answering model, from which we extract probability scores for answerability by
+              looking at answer-span scores.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="headingC">
+            <h5 class="mb-0">
+              <button class="btn shadow-none" type="button" data-toggle="collapse" data-target="#collapseC"
+                aria-expanded="false" aria-controls="collapseC">
+                What do the metrics measure?
+              </button>
+            </h5>
+          </div>
+
+          <div id="collapseC" class="collapse" aria-labelledby="headingC" data-parent="#accordionExample">
+            <div class="card-body">
+              QUACKIE contains three metrics: The primary metrics IoU and HPD and the secondary metric SNR. IoU
+              (Intersection over Union) measures an interpreters capability to correctly identify the most important
+              sentence. HPD (Highest Precision for Detection) measurs how highly placed the ground-truth is in the
+              ranking produced by the interpreter. Finally, SNR (Signal to Noise Ratio) measures the selectivity of the
+              interpreter, assessing if the score of the most important sentence is significantly higher than the scores
+              of the other sentences.
+            </div>
+          </div>
+        </div>
 
       <div class="accordion" id="accordionExample">
         <div class="card">
