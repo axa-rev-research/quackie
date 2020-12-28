@@ -1272,7 +1272,7 @@
       "dataset":"SQuAD",
       "classifier":"QA",
       "method":"GUTEK_10",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13190",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":90.53,
       "HPD":92.37,
       "SNR":37.37
@@ -1281,7 +1281,7 @@
       "dataset":"NEW_WIKI",
       "classifier":"Classification",
       "method":"GUTEK_10",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13191",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":87.7,
       "HPD":90.17,
       "SNR":42.63
@@ -1290,7 +1290,7 @@
       "dataset":"NEW_WIKI",
       "classifier":"QA",
       "method":"GUTEK_10",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13192",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":89.54,
       "HPD":91.68,
       "SNR":37.86
@@ -1299,7 +1299,7 @@
       "dataset":"NYT",
       "classifier":"Classification",
       "method":"GUTEK_10",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13193",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":87.66,
       "HPD":89.64,
       "SNR":32.21
@@ -1308,7 +1308,7 @@
       "dataset":"NYT",
       "classifier":"QA",
       "method":"GUTEK_10",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13194",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":88.04,
       "HPD":90.02,
       "SNR":30.68
@@ -1317,7 +1317,7 @@
       "dataset":"Reddit",
       "classifier":"Classification",
       "method":"GUTEK_10",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13195",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":71.62,
       "HPD":74.93,
       "SNR":19.12
@@ -1326,7 +1326,7 @@
       "dataset":"Reddit",
       "classifier":"QA",
       "method":"GUTEK_10",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13196",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":76.86,
       "HPD":79.5,
       "SNR":17.69
@@ -1335,7 +1335,7 @@
       "dataset":"Amazon",
       "classifier":"Classification",
       "method":"GUTEK_10",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13197",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":79.09,
       "HPD":81.76,
       "SNR":26.11
@@ -1344,7 +1344,7 @@
       "dataset":"Amazon",
       "classifier":"QA",
       "method":"GUTEK_10",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13198",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":78.95,
       "HPD":81.71,
       "SNR":22.22
@@ -1353,7 +1353,7 @@
       "dataset":"SQuAD",
       "classifier":"Classification",
       "method":"GUTEK_100",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13199",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":91.38,
       "HPD":93.02,
       "SNR":35.49
@@ -1362,7 +1362,7 @@
       "dataset":"SQuAD",
       "classifier":"QA",
       "method":"GUTEK_100",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13200",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":90.53,
       "HPD":92.37,
       "SNR":37.37
@@ -1371,7 +1371,7 @@
       "dataset":"NEW_WIKI",
       "classifier":"Classification",
       "method":"GUTEK_100",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13201",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":90.83,
       "HPD":92.72,
       "SNR":39.5
@@ -1380,7 +1380,7 @@
       "dataset":"NEW_WIKI",
       "classifier":"QA",
       "method":"GUTEK_100",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13202",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":90.53,
       "HPD":92.37,
       "SNR":37.37
@@ -1389,7 +1389,7 @@
       "dataset":"NYT",
       "classifier":"Classification",
       "method":"GUTEK_100",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13203",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":91.56,
       "HPD":93.02,
       "SNR":30.38
@@ -1398,7 +1398,7 @@
       "dataset":"NYT",
       "classifier":"QA",
       "method":"GUTEK_100",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13204",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":91.84,
       "HPD":93.36,
       "SNR":33.13
@@ -1407,7 +1407,7 @@
       "dataset":"Reddit",
       "classifier":"Classification",
       "method":"GUTEK_100",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13205",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":80.62,
       "HPD":83.04,
       "SNR":18.22
@@ -1416,7 +1416,7 @@
       "dataset":"Reddit",
       "classifier":"QA",
       "method":"GUTEK_100",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13206",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":86.98,
       "HPD":88.66,
       "SNR":19.48
@@ -1425,7 +1425,7 @@
       "dataset":"Amazon",
       "classifier":"Classification",
       "method":"GUTEK_100",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13207",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":84.77,
       "HPD":86.84,
       "SNR":20.9
@@ -1434,7 +1434,7 @@
       "dataset":"Amazon",
       "classifier":"QA",
       "method":"GUTEK_100",
-      "info":"https:\/\/arxiv.org\/abs\/2012.13208",
+      "info":"https:\/\/arxiv.org\/abs\/2012.13189",
       "IoU":86.14,
       "HPD":88.17,
       "SNR":22.92
